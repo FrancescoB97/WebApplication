@@ -27,6 +27,9 @@ function TaskList()
         //in pratica, se uno dei due è undefined fa il sort, ma prende quello che è undefined (a.deadline != undefined) -> se a è l'undefined, b > a (ritorno -1), altrimenti b è l'undefined quindi a > b (-1)
     }
 
+    //this.filterAndPrint = () => {return [...this.list].filter(urgent => urgent === true);} !! NO
+    this.filterAndPrint = () => {return  [...this.list].filter( element => element.urgent === true)};
+
     this.toString = () => (this.list.map((t)=>(t.toString())).join('\n')); //per la stampa senza le , 
 }
 
@@ -47,5 +50,8 @@ console.log(tasks.toString());
 
 console.log("****** Tasks sorted by deadline (most recent first): ******");
 console.log(tasks.sortAndPrint().toString());
+
+console.log("****** Tasks filtered, only (urgent == true): ******");
+console.log(tasks.filterAndPrint().toString());
 
 debugger;
