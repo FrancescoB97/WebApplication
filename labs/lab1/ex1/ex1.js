@@ -8,13 +8,9 @@ function Task(id, description, urgent = false, priv=true, deadline)
     this.description = description;
     this.urgent = urgent;
     this.private = priv;
-    this.deadline = deadline;  
-    
-    
+    this.deadline = deadline; 
 
-   //this.toString = () => (`ID: ${this.id}, Description: ${this.description}, urgent: ${this.urgent}, private: ${this.private}, Deadline:  ${this.deadline.format('YYYY-MM-DD')}`);
-   this.toString = () => (`ID: ${this.id}, Description: ${this.description}, urgent: ${this.urgent}, private: ${this.private}, Deadline: ` + (this.deadline === undefined ? "<not defined>" : this.deadline.format('YYYY-MM-DD')) + '\n');
-   
+    this.toString = () => (`ID: ${this.id}, Description: ${this.description}, urgent: ${this.urgent}, private: ${this.private}, Deadline: ` + (this.deadline === undefined ? "<not defined>" : this.deadline.format('YYYY-MM-DD')) + '\n');   
 }
 
 function TaskList()
@@ -23,15 +19,15 @@ function TaskList()
     
     this.add = (t) => {this.list.push(t)};
 
-    this.print = () => { return [...this.list]};
-    
+    //this.print = () => { return [...this.list]};    
 
-    this.sortAndPrint = () => {
-        //return [...this.list].sort((a,b) => (a.deadline - b.deadline ? 1 : -1)); //isAfter non va bene per undefined
-        return [...this.list].sort((a,b) => { (a != undefined || b != undefined) ? (a.deadline.isAfter(b.deadline) ? 1 : -1) : -1});
+    this.sortAndPrint = () => {        
+        //return [...this.list].sort((a,b) => (a.deadline.isAfter(b.deadline) ? 1 : -1)); works but undefined??
+        return [...this.list].sort((a,b) => ( (a.deadline != undefined && b.deadline != undefined) ? (a.deadline.isAfter(b.deadline) ? 1 : -1) : (a.deadline != undefined) ? -1 : 1) );
+        //in pratica, se uno dei due è undefined fa il sort, ma prende quello che è undefined (a.deadline != undefined) -> se a è l'undefined, b > a (ritorno -1), altrimenti b è l'undefined quindi a > b (-1)
     }
 
-    this.toString = () => (this.tasks.map((t)=>(t.toString())).join('\n'));
+    this.toString = () => (this.list.map((t)=>(t.toString())).join('\n')); //per la stampa senza le , 
 }
 
 const t1 = new Task(1, "Clean hard disk", false, true) ;
@@ -47,7 +43,7 @@ tasks.add(t4);
 tasks.add(t7);
 tasks.add(t3);
 
-console.log(tasks.print().toString());
+console.log(tasks.toString());
 
 console.log("****** Tasks sorted by deadline (most recent first): ******");
 console.log(tasks.sortAndPrint().toString());
