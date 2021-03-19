@@ -16,7 +16,7 @@ function Task(id, description, urgent = false, priv=true, deadline)
 
 function TaskList()
 {
-    const db = new sqlite.Database('tasks.sqlite', (err) => { if (err) throw err; });
+    const db = new sqlite.Database('tasks.db', (err) => { if (err) throw err; });
  
     this.getAll = () => {
         return new Promise((resolve, reject) => {
@@ -24,18 +24,26 @@ function TaskList()
           db.all(sql, [], (err, rows) => {
             if(err)
               reject(err);
-            else {
+            else {              
               const tasks = rows.map(row => new Task(row.id, row.description, row.priv, row.deadline));
-              resolve(exams);
+              resolve(tasks);
             }
           });            
         });
-      };   
-
-    this.toString = () => (this.list.map((t)=>(t.toString())).join('\n')); //per la stampa senza le , 
+      };       
 }
 
-const tasks = new TaskList();
 
-console.log(tasks.getAll().toString());
+const main = async () => {
+    const taskList = new TaskList();   
+
+    // get all the Tasks
+    const tasks = await taskList.getAll();
+    console.log(`${tasks}`);  
+    
+  }
+  
+  main();
+
+
 
