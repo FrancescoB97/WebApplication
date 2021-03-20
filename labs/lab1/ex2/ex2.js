@@ -3,15 +3,16 @@
 const dayjs = require('dayjs');
 const sqlite = require('sqlite3');
 
-function Task(id, description, urgent = false, priv=true, deadline)
+function Task(id, description, urgent = false, priv, deadline)
 {
     this.id = id;
     this.description = description;
     this.urgent = urgent;
     this.private = priv;
-    this.deadline = deadline; 
+    this.deadline = dayjs(deadline);     
 
-    this.toString = () => (`ID: ${this.id}, Description: ${this.description}, urgent: ${this.urgent}, private: ${this.private}, Deadline: ` + (this.deadline === undefined ? "<not defined>" : this.deadline.format('YYYY-MM-DD')) + '\n');   
+    this.toString = () => (`ID: ${this.id}, Description: ${this.description}, urgent: ${this.urgent}, private: ${this.private}, Deadline: ` + (this.deadline.isValid() === false ? "<not defined>" : this.deadline.format('YYYY-MM-DD')) + '\n');  
+    //se data è null me la considera Invalid Date, quindi devo verificare con isValid se è valida o no
 }
 
 function TaskList()
@@ -25,7 +26,7 @@ function TaskList()
             if(err)
               reject(err);
             else {              
-              const tasks = rows.map(row => new Task(row.id, row.description, row.priv, row.deadline));
+              const tasks = rows.map(row => new Task(row.id, row.description, row.urgent, row.private, row.deadline));
               resolve(tasks);
             }
           });            
@@ -40,7 +41,8 @@ const main = async () => {
     // get all the Tasks
     const tasks = await taskList.getAll();
     console.log(`${tasks}`);  
-    
+   // console.log(tasks.toString());  
+   //console.log(tasks); 
   }
   
   main();
