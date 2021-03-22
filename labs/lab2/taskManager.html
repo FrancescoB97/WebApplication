@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TaskManager</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <!-- Custom CSS for this document -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class='container-fluid'>
+
+        <header class='row top'>
+
+            <div class="col-sm-4">
+                <h1>ToDo</h1>
+            </div>
+            <div class="col-sm-4">
+                <div class="SearchBox">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="search" aria-label="search"
+                            aria-describedby="button-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" id="btnSearch">...</button>
+                        </div>
+                    </div>
+                </div>
+        </header>
+
+        <p></p>
+
+        <div class='row'>
+            <aside class='col-sm-3'>
+                <div class="list-group">
+                    <button id="btnAll" type="button" class="list-group-item list-group-item-action">All</button>
+                    <button type="button" class="list-group-item list-group-item-action">Important</button>
+                    <button type="button" class="list-group-item list-group-item-action">Today</button>
+                    <button type="button" class="list-group-item list-group-item-action">Next 7 days</button>
+                    <button type="button" class="list-group-item list-group-item-action">Private</button>
+                </div>
+            </aside>
+            <main class='col-8'>
+                <h2>All</h2>
+
+                <div id='tasksList'>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Cantare sotto la doccia
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <small>1 days</small>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Piangere sul latte versato
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">  
+                            <small>everyday</small>                            
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Perdere su COD
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <small>today</small>
+                        </li>
+                    </ul>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

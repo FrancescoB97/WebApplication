@@ -1,0 +1,22 @@
+.top {
+    background-color: orange;
+}
+
+body {
+    background-color: honeydew;
+}
+
+.searchBox{    
+    padding: 10px 0;
+      
+}
+
+h2 {
+    font-weight: 600;
+ }
+
+#btnAll {
+    background-color: rgb(40, 224, 40);   
+    color: white; 
+  }
+
