@@ -14,57 +14,115 @@
 
 <body>
     <div class='container-fluid'>
-
         <header class='row top'>
-
             <div class="col-sm-4">
                 <h1>ToDo</h1>
             </div>
-            <div class="col-sm-4">
+            <div class="col-4">
                 <div class="SearchBox">
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="search" aria-label="search"
-                            aria-describedby="button-addon2">
+                    <div class="input-group mb-3 center">
+                        <input type="text" class="form-control" placeholder="search" aria-label="search" aria-describedby="button-addon2">
                         <div class="input-group-append">
                             <button class="btn btn-outline-secondary" type="button" id="btnSearch">...</button>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="col-4">
+                <img src="userImage.png" class="rounded float-right" alt="Login" width="45" height="45">
+            </div>
+
         </header>
 
         <p></p>
 
         <div class='row'>
-            <aside class='col-sm-3'>
+            <aside class='col-3'>
                 <div class="list-group">
                     <button id="btnAll" type="button" class="list-group-item list-group-item-action">All</button>
                     <button type="button" class="list-group-item list-group-item-action">Important</button>
                     <button type="button" class="list-group-item list-group-item-action">Today</button>
                     <button type="button" class="list-group-item list-group-item-action">Next 7 days</button>
                     <button type="button" class="list-group-item list-group-item-action">Private</button>
+                    <button class="btn btn-default btn-circle btn-lg"><i class="glyphicon glyphicon-plus"
+                            aria-hidden="true"></i></button>
                 </div>
             </aside>
-            <main class='col-8'>
+            <main class='col-sm-8'>
                 <h2>All</h2>
 
-                <div id='tasksList'>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            Cantare sotto la doccia
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <small>1 days</small>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            Piangere sul latte versato
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">  
-                            <small>everyday</small>                            
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            Perdere su COD
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <small>today</small>
-                        </li>
-                    </ul>
+                <div id='TasksTable'>
+                    <table class='table'>
+                        <thead>
+                            <tr>
+                                <th>Done</th>
+                                <th>Task</th>
+                                <th>Status</th>
+                                <th>Date</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault"></td>
+                                <td>Cantare sotto la doccia</td>
+                                <td></td>
+                                <td>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">1 days</li>
+                                        <li class="list-group-item"><small>23/03/2021</small></li>
+                                    </ul>
+                                </td>
+                                <td><button class="btndeleteTask">X</button> </td>                                
+                            </tr>
+
+                            <tr>
+                                <td><input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault"></td>
+                                <td>Piangere sul latte versato</td>
+                                <td></td>
+                                <td>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">everyday</li>
+                                        <li class="list-group-item"><small>20/04/1997</small></li>
+                                    </ul>
+                                </td>
+                                <td><button class="btndeleteTask">X</button></td>
+                                <td>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item left"><button class="btndoing"></button></li>
+                                        <li class="list-group-item left"><button class="btnimportant"></button></li>
+                                    </ul>   
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault"></td>
+                                <td>Perdere su COD</td>
+                                <td></td>
+                                <td>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">today</li>
+                                        <li class="list-group-item"><small>20/03/2021</small></li>
+                                    </ul>
+                                </td>
+                                <td><button class="btndeleteTask">X</button> </td>
+                                <td>                                    
+                                    <div class= 'left'></li><button class="btndoing"></button></div>
+                                    <div class= 'left'><button class="btnimportant"></button></div>
+                                      
+                                </td>
+                            </tr>  
+                            
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><button class="btnaddTask">+</button> </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </main>
         </div>
