@@ -1,12 +1,9 @@
-.top {
-    background-color: orange;
-}
-
 body {
     background-color: honeydew;
 }
 
 .top{  /*o container-fluid>header */ 
+    background-color: orange;
     display: flex;     /*centro la prima riga verticalmente*/
     justify-content: center;
     align-items: center;      

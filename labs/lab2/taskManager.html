@@ -18,8 +18,8 @@
             <div class="col-sm-4">
                 <h1>ToDo</h1>
             </div>
-            <div class="col-4">
-                <div class="SearchBox">
+            <div class="col-4 d-sm-block">
+                <div class="SearchBox"> 
                     <div class="input-group mb-3 center">
                         <input type="text" class="form-control" placeholder="search" aria-label="search" aria-describedby="button-addon2">
                         <div class="input-group-append">
@@ -37,7 +37,7 @@
         <p></p>
 
         <div class='row'>
-            <aside class='col-3'>
+            <aside class='col-3 d-sm-block' >
                 <div class="list-group">
                     <button id="btnAll" type="button" class="list-group-item list-group-item-action">All</button>
                     <button type="button" class="list-group-item list-group-item-action">Important</button>
@@ -74,7 +74,11 @@
                                         <li class="list-group-item"><small>23/03/2021</small></li>
                                     </ul>
                                 </td>
-                                <td><button class="btndeleteTask">X</button> </td>                                
+                                <td><button class="btndeleteTask">X</button> </td>  
+                                <td>                                    
+                                    <div class= 'left'></li><button class="btndoing"></button></div>
+                                    <div class= 'left'><button class="btnimportant"></button></div>                                      
+                                </td>                              
                             </tr>
 
                             <tr>
@@ -88,11 +92,9 @@
                                     </ul>
                                 </td>
                                 <td><button class="btndeleteTask">X</button></td>
-                                <td>
-                                    <ul class="list-group list-group-flush">
-                                        <li class="list-group-item left"><button class="btndoing"></button></li>
-                                        <li class="list-group-item left"><button class="btnimportant"></button></li>
-                                    </ul>   
+                                <td>                                    
+                                    <div class= 'left'></li><button class="btndoing"></button></div>
+                                    <div class= 'left'><button class="btnimportant"></button></div>                                      
                                 </td>
                             </tr>
 
@@ -109,8 +111,7 @@
                                 <td><button class="btndeleteTask">X</button> </td>
                                 <td>                                    
                                     <div class= 'left'></li><button class="btndoing"></button></div>
-                                    <div class= 'left'><button class="btnimportant"></button></div>
-                                      
+                                    <div class= 'left'><button class="btnimportant"></button></div>                                      
                                 </td>
                             </tr>  
                             
