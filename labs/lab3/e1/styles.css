@@ -45,7 +45,7 @@ h2 {
     background-color: darkred; /* Darker background on mouse-over */
   }
 
-.btnaddTask{
+.btnaddTask{    
     background-color: rgb(9, 160, 9);
     border: 2px solid black;
     padding-bottom: 20px; /* per centrare il +*/
@@ -63,6 +63,10 @@ h2 {
     background-color: darkgreen; /* Darker background on mouse-over */    
   }
 
+
+.important {
+    color: red; 
+}
 
 .table{
     background: white;
@@ -108,6 +112,4 @@ input[type="checkbox"] {
     display: flex;    
     justify-content: left;
     align-items: left;  
-  }
-
-  
+  }  
