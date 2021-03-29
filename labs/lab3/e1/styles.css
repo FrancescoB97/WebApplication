@@ -1,0 +1,113 @@
+body {
+    background-color: honeydew;
+}
+
+.top{  /*o container-fluid>header */ 
+    background-color: orange;
+    display: flex;     /*centro la prima riga verticalmente*/
+    justify-content: center;
+    align-items: center;      
+  }
+
+.SearchBox{
+    padding-top: 10px;
+}
+h1{
+    font-family: 'sans-serif';
+}
+
+h2 {
+    font-weight: 600;
+ }
+
+#btnAll {
+    background-color: rgb(40, 224, 40);   
+    color: white; 
+  }
+
+
+.btndeleteTask{
+    background-color: red;
+    border: 2px solid black;
+    color: white;    
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    /*margin: 4px 2px;*/
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    cursor: pointer; /* Mouse pointer on hover */
+}
+
+.btndeleteTask:hover {
+    background-color: darkred; /* Darker background on mouse-over */
+  }
+
+.btnaddTask{
+    background-color: rgb(9, 160, 9);
+    border: 2px solid black;
+    padding-bottom: 20px; /* per centrare il +*/
+    color: white;    /*text color*/
+    text-align: center;    
+    text-decoration: none;    
+    font-size: 32px;    
+    border-radius: 50%; /*rounded button*/
+    height: 60px; /*dimensione fissa: mi permette di aumentare il fontsize*/
+    width: 60px; /*senza che il button venga distorto*/
+    cursor: pointer; /* Mouse pointer on hover */
+}
+
+.btnaddTask:hover {
+    background-color: darkgreen; /* Darker background on mouse-over */    
+  }
+
+
+.table{
+    background: white;
+    text-align: center;
+    
+}
+
+.table > tbody > tr > td {
+    vertical-align: middle; /* solo così mi funziona vertical-align*/
+}
+
+input[type="checkbox"] {
+    width: 20px; height: 20px; /*non su ff...*/
+}
+
+.btndoing{
+    background:url(./images/status_doing.png) no-repeat;
+    background-size: cover;
+    cursor:pointer;    
+    border:none;    
+    width:20px;
+    height:20px;
+}
+
+.btnimportant{
+    background:url(./images/status_important.png) no-repeat;
+    background-size: cover;    
+    cursor:pointer;
+    border:none;
+    width:20px;
+    height:20px;    
+}
+
+.btndoing:hover{
+    border: 3px dashed black;
+}
+
+.btnimportant:hover{
+    border: 3px dashed black;
+}
+
+.left {
+    display: flex;    
+    justify-content: left;
+    align-items: left;  
+  }
+
+  
