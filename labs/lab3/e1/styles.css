@@ -2,29 +2,49 @@ body {
     background-color: honeydew;
 }
 
-.top{  /*o container-fluid>header */ 
-    background-color: orange;
-    display: flex;     /*centro la prima riga verticalmente*/
-    justify-content: center;
-    align-items: center;      
-  }
-
-.SearchBox{
-    padding-top: 10px;
+.vheight-100 {
+    min-height: 100vh;
 }
-h1{
-    font-family: 'sans-serif';
+
+.navbar-text{
+    color: black;
 }
 
 h2 {
     font-weight: 600;
  }
 
+ .list-group-item {
+    background-color: transparent;
+}
+
+.list-group-item.active {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.list-group-item-action:hover {
+    background-color: #9becae;
+}
+
+ .below-nav {
+    padding-top: 5rem;
+}
+
+/* Filters and projects */
+.list-group-item {
+    background-color: transparent;
+}
+
+.list-group-item.active {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
 #btnAll {
     background-color: rgb(40, 224, 40);   
     color: white; 
   }
-
 
 .btndeleteTask{
     background-color: red;
@@ -43,7 +63,7 @@ h2 {
 
 .btndeleteTask:hover {
     background-color: darkred; /* Darker background on mouse-over */
-  }
+}
 
 .btnaddTask{    
     background-color: rgb(9, 160, 9);
@@ -59,10 +79,10 @@ h2 {
     cursor: pointer; /* Mouse pointer on hover */
 }
 
+/*fare un btntask con tutto e un btnAdd e btnDel*/
 .btnaddTask:hover {
     background-color: darkgreen; /* Darker background on mouse-over */    
-  }
-
+}
 
 .important {
     color: red; 

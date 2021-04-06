@@ -6,12 +6,12 @@ this.addToTable = (t) => {
 
     this.addCheckbox = () => {
         let newC = document.createElement('td'); 
-        let checkbox = document.createElement("input");
-        checkbox.classList.add("form-check-input");    
-        checkbox.type = "checkbox"
-        checkbox.id="flexSwitchCheckDefault";
-        newC.appendChild(checkbox); 
-        newR.appendChild(newC); 
+
+        newC.innerHTML += //visto che ho molta roba da aggiungere uso sta scrittura
+        `<div class="custom-control custom-checkbox">`
+        + `<input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault"></div>` ;
+        
+        newR.appendChild(newC);             
     };
 
     this.addDescription = () => { 
@@ -30,62 +30,45 @@ this.addToTable = (t) => {
         {
             newR.appendChild(newC); 
             return;
-        }            
-              
-        let text = document.createTextNode('P');                
-        newC.appendChild(text); 
+        }      
+        
+        newC.innerHTML +=
+        `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-file-earmark-person-fill" viewBox="0 0 16 16">
+            <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0zm2 5.755V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-.245S4 12 8 12s5 1.755 5 1.755z"/>
+        </svg>` ;
+        /*newC.innerHTML += '<svg class="bi bi-person-square" width="1.2em" height="1.2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"> '
+                +  '<path fill-rule="evenodd" d="M14 1H2a1 1 0 00-1 1v12a1 1 0 001 1h12a1 1 0 001-1V2a1 1 0 00-1-1zM2 0a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V2a2 2 0 00-2-2H2z" clip-rule="evenodd"/>'
+                +  '<path fill-rule="evenodd" d="M2 15v-1c0-1 1-4 6-4s6 3 6 4v1H2zm6-6a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>'
+                +'</svg>' ;*/
+        
         newR.appendChild(newC); 
     };
 
     this.addDates = () => {
         let newC = document.createElement('td');  
-        let list = document.createElement('ul');  
-        list.classList.add("list-group"); 
-        list.classList.add("list-group-flush"); 
 
-        let deadlineDate = document.createElement('li');
-        deadlineDate.classList.add("list-group-item"); 
-        deadlineDate.appendChild(document.createTextNode(t.deadline)); 
-
-        let actualDate = document.createElement('li');
-        actualDate.classList.add("list-group-item"); 
-        let now = document.createElement('small');
+        newC.innerHTML += //visto che ho molta roba da aggiungere uso sta scrittura
+            `<ul class="list-group list-group-flush">`
+            + `<li class="list-group-item">${t.deadline}</li>`
+            + `<li class="list-group-item"><small>${dayjs()}</small></li></ul>` ;
         
-        now.appendChild(document.createTextNode(dayjs())); //current time
-        actualDate.appendChild(now);
-
-        list.appendChild(deadlineDate);
-        list.appendChild(actualDate);
-
-        newC.appendChild(list); 
         newR.appendChild(newC);
     };
 
     this.addDeleteBtn = () => {
-        let newC = document.createElement('td'); 
-        let btn = document.createElement("button");
-        btn.classList.add("btndeleteTask");  
-        btn.innerHTML = "X";     
-        newC.appendChild(btn);         
+        let newC = document.createElement('td');         
+        newC.innerHTML +=  `<button class="btndeleteTask">X</button>` ;  
         newR.appendChild(newC); 
     };
 
     this.addUserBtn = () => {
         let newC = document.createElement('td'); 
-        let div1 = document.createElement('div'); 
-        div1.classList.add("left"); 
-        let btn1 = document.createElement("button");
-        btn1.classList.add("btndoing")        
-        let div2 = document.createElement('div');
-        div2.classList.add("left");   
-        let btn2 = document.createElement("button");
-        btn2.classList.add("btnimportant")  
 
-        newC.appendChild(div1); 
-        newC.appendChild(btn1); 
-        newC.appendChild(div2); 
-        newC.appendChild(btn2); 
-        
+        newC.innerHTML += //visto che ho molta roba da aggiungere uso sta scrittura
+            `<div class="left">`
+            + `<button class="btndoing"></button></div>`
+            +`<div class="left"><button class="btnimportant"></button></div>` ;
+               
         newR.appendChild(newC); 
     };
 
